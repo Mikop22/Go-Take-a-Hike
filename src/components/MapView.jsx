@@ -38,7 +38,7 @@ const MapView = ({ hike, onBackClick }) => {
         if (!window.google?.maps) {
           await new Promise(resolve => {
             const script = document.createElement('script');
-            script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyBW7xz78Cff2zjHyxFi_NLu4cm9uv0DL9o&libraries=maps3d,geocoding`;
+            script.src = ''; //your maps api key
             script.async = true;
             script.onload = resolve;
             document.head.appendChild(script);
