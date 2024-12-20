@@ -1,7 +1,7 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { trailCache } from "../App";
 
-const genAI = new GoogleGenerativeAI("AIzaSyDp-s_QCrViCaucgvWzsk9BZYmW9PwF6A8");
+const genAI = new GoogleGenerativeAI("");  //Your gemini API KEY
 const generationConfig = {
   temperature: 1,
   topP: 0.95,
