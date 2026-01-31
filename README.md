@@ -27,6 +27,7 @@ Before you begin, ensure you have the following installed:
 - Node.js (version 14 or higher)
 - npm or yarn package manager
 - A Google Gemini API key ([Get one here](https://makersuite.google.com/app/apikey))
+- A Google Maps API key ([Get one here](https://developers.google.com/maps/documentation/javascript/get-api-key))
 
 ## 🚀 Installation
 
@@ -41,11 +42,18 @@ Before you begin, ensure you have the following installed:
    npm install
    ```
 
-3. **Configure your API key**
+3. **Configure your API keys**
    
-   Open `src/utils/hikingAPI.js` and add your Google Gemini API key:
+   **⚠️ Security Note**: Never commit API keys to version control. Consider using environment variables for production deployments.
+   
+   a. **Google Gemini API Key**: Open `src/utils/hikingAPI.js` and add your key:
    ```javascript
-   const genAI = new GoogleGenerativeAI("YOUR_API_KEY_HERE");
+   const genAI = new GoogleGenerativeAI("YOUR_GEMINI_API_KEY_HERE");
+   ```
+   
+   b. **Google Maps API Key**: Open `src/components/MapView.jsx` and add your key on line 41:
+   ```javascript
+   script.src = 'https://maps.googleapis.com/maps/api/js?key=YOUR_MAPS_API_KEY_HERE&libraries=maps3d,places';
    ```
 
 ## 🎯 Usage
