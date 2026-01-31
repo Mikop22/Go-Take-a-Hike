@@ -41,7 +41,23 @@ Before you begin, ensure you have the following installed:
 
 3. **Configure API Keys**
    
-   You'll need to add your API keys to the following files:
+   ⚠️ **Security Note**: For production use, it's recommended to use environment variables instead of hardcoding API keys.
+
+   **Option A: Using Environment Variables (Recommended)**
+   
+   Create a `.env.local` file in the root directory (this file is automatically ignored by git):
+   ```env
+   VITE_GEMINI_API_KEY=your_gemini_api_key_here
+   VITE_MAPS_API_KEY=your_maps_api_key_here
+   ```
+
+   Then update the code to use these environment variables:
+   - In `src/utils/hikingAPI.js` line 4: `const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY);`
+   - In `src/components/MapView.jsx` line 41: `script.src = 'https://maps.googleapis.com/maps/api/js?key=${import.meta.env.VITE_MAPS_API_KEY}&libraries=places';`
+
+   **Option B: Direct Configuration (For Testing Only)**
+   
+   Add your API keys directly to the source files (⚠️ **NOT recommended for version control**):
 
    - **Google Gemini API Key**: Open `src/utils/hikingAPI.js` and replace the empty string on line 4:
      ```javascript
@@ -121,10 +137,9 @@ Go-Take-a-Hike/
 This application requires two API keys:
 
 ### Google Gemini API Key
-Used for generating AI-powered trail recommendations. The free tier provides:
-- 60 requests per minute
-- 1,500 requests per day
-- Perfect for personal use and testing
+Used for generating AI-powered trail recommendations. Get your free API key at [Google AI Studio](https://makersuite.google.com/app/apikey).
+
+**Note**: Rate limits vary by tier. Check the [official documentation](https://ai.google.dev/pricing) for current rate limits and pricing information.
 
 ### Google Maps API Key
 Used for geocoding addresses and displaying 3D maps. Make sure to enable:
