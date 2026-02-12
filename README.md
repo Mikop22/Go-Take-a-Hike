@@ -1,10 +1,11 @@
 # 🏔️ Go Take a Hike!
-
 A modern, AI-powered hiking trail discovery application that helps outdoor enthusiasts find and explore hiking trails near their location. Built with React and powered by Google's Gemini AI, this app provides personalized trail recommendations with interactive 3D maps.
 
 ![Go Take a Hike](https://img.shields.io/badge/version-1.0.0-green)
 ![React](https://img.shields.io/badge/react-18.3.1-blue)
 ![Vite](https://img.shields.io/badge/vite-5.4.10-purple)
+<img width="2010" height="954" alt="Screenshot 2026-02-12 at 12 31 25 PM" src="https://github.com/user-attachments/assets/ade92a9a-e66c-4eba-bedb-84ec891bc562" />
+
 
 ## ✨ Features
 
